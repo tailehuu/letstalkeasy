@@ -1,5 +1,4 @@
 <template name="header">
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -38,32 +37,8 @@
                     </div>
                 </form>
             </div>
-            <!--/.nav-collapse -->
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <div class="container">
-
-            <br />
-
-            <div class="well" style="background-color: #28b697; width: 50%; margin: 0 auto">
-                What's on your mind?
-            </div>
-
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">ALL POSTS</a></li>
-                <li><a href="#about">PHOTOS</a></li>
-                <li><a href="#contact">VIDEOS</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                </li>
-                <li>
-                    <a href="#"><span class="glyphicon glyphicon-th"></span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    {{> jumbotron}}
 </template>

@@ -1,3 +1,5 @@
+@import 'fonts.scss';
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -15,9 +17,11 @@ html {
       /* Set the fixed height of the footer here */
       height: 60px;
       border-top: 1px solid #E5E7EA;
-      color: #31c4a1;
+      //color: #31c4a1;
       text-transform: uppercase;
     }
+
+    font-family: "lato" !important;
   }
 }
 
@@ -34,6 +38,14 @@ body {
   .container {
     .text-muted {
       margin: 20px 0;
+    }
+
+    .thumbnail {
+      padding: 0;
+    }
+
+    .media-left .media-object {
+      max-width: 64px;
     }
   }
 
@@ -59,6 +71,26 @@ body {
     background: url("images/jumbotron.jpg") no-repeat center center;
     color: #ffffff;
     margin-bottom: 0px;
+    height: 300px;
+
+    .container {
+      .post {
+        background-color: #28b697;
+        padding: 20px;
+        margin: 54px 0;
+        border-radius: 5px;
+
+        input[type="text"] {
+          background-color: #28b697;
+          border-color: #28b697;
+          box-shadow: none;
+        }
+
+        a {
+          margin-left: 15px;
+        }
+      }
+    }
   }
 
   code {
