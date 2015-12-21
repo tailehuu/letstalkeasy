@@ -1,0 +1,21 @@
+<template name="index">
+    {{>signInWithEmailModal}}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h3>Sign In to LetsTalkEasy</h3>
+                <p>Hey there team maties! Come on aboard!</p>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block btn-facebook"><i class="fa fa-facebook"></i> &nbsp; Sign in with Facebook</button>
+            <br>
+            <button type="button" class="btn btn-success btn-block btn-github"><i class="fa fa-github"></i> &nbsp; Sign in with GitHub</button>
+            <br>
+            <button type="button" class="btn btn-info btn-block btn-google"><i class="fa fa-google"></i> &nbsp; Sign in with Google</button>
+            <br>
+            <button type="button" class="btn btn-warning btn-block btn-twitter"><i class="fa fa-twitter"></i> &nbsp; Sign in with Twitter</button>
+            <br>
+            <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#sign-in-with-email-modal"><i class="fa fa-envelope"></i> &nbsp; Sign in with Email</button>
+        </div>
+    </div>
+</template>
