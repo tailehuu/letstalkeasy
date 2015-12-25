@@ -46,3 +46,11 @@ themeteorchef:jquery-validation
 check                   # validation
 audit-argument-checks
 
+edgee:slingshot         # upload file to S3
+browser-policy
+meteorhacks:npm
+
+themeteorchef:bert      # alert
+
+
+npm-container

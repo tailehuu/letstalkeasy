@@ -59,4 +59,7 @@ Meteor.startup(->
         profile:
           name: user.name
       )
+
+  # Custom Browser Policies
+  customBrowserPolicies()
 )

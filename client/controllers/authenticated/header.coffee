@@ -1,6 +1,9 @@
 Template.header.events(
   'click .logout': (e,t) ->
     Meteor.logout((error)->
-      alert error.reason if error
+      if error
+        Bert.alert error.reason, 'danger'
+      else
+        Bert.alert 'Succesfully logged out!', 'success'
     )
 )
