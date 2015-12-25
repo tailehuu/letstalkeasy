@@ -17,27 +17,32 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 insecure                # Allow all DB writes from clients (for prototyping)
-iron:router
+
 sacha:spin
 
-fortawesome:fontawesome
-fourseven:scss
-
-accounts-password
+accounts-password       # account
 accounts-facebook
 accounts-github
 accounts-google
 accounts-twitter
 service-configuration
-useraccounts:bootstrap
+accounts-base
+
+fortawesome:fontawesome  # css
+fourseven:scss
 twbs:bootstrap
 
-useraccounts:iron-routing
+iron:router             # routing
 zimme:active-route
 
-http
+http                    # services
 email
 meteorhacks:ssr
-coffeescript
-check
+
+coffeescript            # js
+underscore
 themeteorchef:jquery-validation
+
+check                   # validation
+audit-argument-checks
+

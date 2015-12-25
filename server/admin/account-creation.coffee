@@ -13,17 +13,11 @@ determineEmail = (user)->
   else
     null
 
-# Function: Accounts.onCreateUser()
-# Hook into Meteor's account creation event to fire off a "welcome email" to new user's.
 Accounts.onCreateUser((options, user)->
-  # Pass our user over to our determineEmail function to see if we can
-  # find an address to send our "welcome email" to. We also call up the profile
-  # object to see if it exists and pull in a name if it's available.
   userData =
     email: determineEmail(user)
     name: if options.profile then options.profile.name else ""
 
-  # If we get an email address, call up our sendWelcomeEmail method.
   if userData.email != null
     Meteor.call 'sendWelcomeEmail', userData, (error)->
       console.log error if error

@@ -12,9 +12,9 @@
                     </form>
 
                     <ul class="nav navbar-nav">
-                        <li><a href="{{pathFor 'posts'}}">ALL POSTS</a></li>
-                        <li><a href="{{pathFor 'photos'}}">PHOTOS</a></li>
-                        <li><a href="{{pathFor 'videos'}}">VIDEOS</a></li>
+                        <li><a href="{{pathFor 'posts'}}" class="{{isActiveRoute 'posts'}}">ALL POSTS</a></li>
+                        <li><a href="{{pathFor 'photos'}}" class="{{isActiveRoute 'photos'}}">PHOTOS</a></li>
+                        <li><a href="{{pathFor 'videos'}}" class="{{isActiveRoute 'videos'}}">VIDEOS</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>

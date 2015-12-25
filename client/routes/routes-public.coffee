@@ -3,7 +3,6 @@ Router.route('index',
   template: 'index'
   layoutTemplate: 'loginLayout'
   onBeforeAction: ->
-    # Code to run before route goes here.
     @next()
 )
 
