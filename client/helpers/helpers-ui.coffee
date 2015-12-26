@@ -28,7 +28,8 @@ UI.registerHelper('userIdentity', (userId) ->
       when services.github then services.github.email
       when services.google then services.google.email
       when services.twitter then services.twitter.screenName
-      else false
+      else
+        false
     getService
   else
     getUser.profile.name
