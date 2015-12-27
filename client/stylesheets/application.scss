@@ -71,6 +71,10 @@ body {
     height: 300px;
 
     .container {
+      .upload-area input[type="file"] {
+        //opacity: 0;
+      }
+
       .post {
         background-color: #28b697;
         padding: 20px;

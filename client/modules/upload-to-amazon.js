@@ -6,8 +6,8 @@ let _setPlaceholderText = ( string = "Click or Drag a File Here to Upload" ) => 
   template.find( ".alert span" ).innerText = string;
 };
 
-let _addUrlToDatabase = ( url ) => {
-  Meteor.call( "storeUrlInDatabase", url, ( error ) => {
+let _addPostToDatabase = ( post ) => {
+  Meteor.call( "storePostInDatabase", post.title, post.url, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason, "warning" );
       _setPlaceholderText();
@@ -18,25 +18,30 @@ let _addUrlToDatabase = ( url ) => {
   });
 };
 
-let _uploadFileToAmazon = ( file ) => {
+let _uploadFileToAmazon = ( post ) => {
   const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+  let file = post.files[0];
 
   uploader.send( file, ( error, url ) => {
     if ( error ) {
       Bert.alert( error.message, "warning" );
       _setPlaceholderText();
     } else {
-      _addUrlToDatabase( url );
+      _addPostToDatabase({
+        title: post.title,
+        url: url
+      });
     }
   });
 };
 
 let upload = ( options ) => {
   template = options.template;
-  let file = _getFileFromInput( options.event );
+  //let file = _getFileFromInput( options.event );
+  let post = options.post;
 
-  _setPlaceholderText( `Uploading ${file.name}...` );
-  _uploadFileToAmazon( file );
+  _setPlaceholderText( `Uploading...` );
+  _uploadFileToAmazon( post );
 };
 
 Modules.client.uploadToAmazonS3 = upload;
