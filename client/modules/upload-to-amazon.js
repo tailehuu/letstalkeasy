@@ -7,7 +7,7 @@ let _setPlaceholderText = ( string = "Click or Drag a File Here to Upload" ) => 
 };
 
 let _addPostToDatabase = ( post ) => {
-  Meteor.call( "storePostInDatabase", post.title, post.url, ( error ) => {
+  Meteor.call( "storePostInDatabase", post.title, post.url, post.type, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason, "warning" );
       _setPlaceholderText();
@@ -29,7 +29,8 @@ let _uploadFileToAmazon = ( post ) => {
     } else {
       _addPostToDatabase({
         title: post.title,
-        url: url
+        url: url,
+        type: file.type
       });
     }
   });
@@ -37,7 +38,6 @@ let _uploadFileToAmazon = ( post ) => {
 
 let upload = ( options ) => {
   template = options.template;
-  //let file = _getFileFromInput( options.event );
   let post = options.post;
 
   _setPlaceholderText( `Uploading...` );
