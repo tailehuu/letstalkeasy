@@ -1,0 +1,39 @@
+<template name="post">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="images/1.jpg" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Tai LE</h4>
+                        {{title}}
+                    </div>
+                </div>
+            </div>
+
+            {{#if isImage url}}
+                <img src="{{url}}" alt="...">
+            {{else}}
+                <div class="embed-responsive-item">
+                    <video width="100%" controls>
+                        <source src="{{url}}" type="video/mp4">
+                        <source src="{{url}}" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            {{/if}}
+
+            <div class="row">
+                <div class="col-md-12 text-right" style="margin:10px 0; right: 15px">
+                    <a href="#"><i class="fa fa-reply"></i></a> &nbsp;
+                    <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
+                    <a href="#">1h</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

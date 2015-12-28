@@ -7,7 +7,7 @@ Meteor.methods({
         Modules.both.checkUrlValidity(url);
 
         try {
-            Files.insert({
+            Posts.insert({
                 title: title,
                 url: url,
                 type: type,

@@ -8,7 +8,7 @@ Slingshot.createDirective( "uploadToAmazonS3", Slingshot.S3Storage, {
   region: "ap-southeast-1",
   acl: "public-read",
   authorize: function () {
-    let userFileCount = Files.find( { "userId": this.userId } ).count();
+    let userFileCount = Posts.find( { "userId": this.userId } ).count();
 
     //return userFileCount < 3 ? true : false;
 

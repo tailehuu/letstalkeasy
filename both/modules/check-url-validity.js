@@ -1,5 +1,5 @@
 let _fileExistsInDatabase = ( url ) => {
-  return Files.findOne( { "url": url, "userId": Meteor.userId() }, { fields: { "_id": 1 } } );
+  return Posts.findOne( { "url": url, "userId": Meteor.userId() }, { fields: { "_id": 1 } } );
 };
 
 let _isNotAmazonUrl = ( url ) => {
