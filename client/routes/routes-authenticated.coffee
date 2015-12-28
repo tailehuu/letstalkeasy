@@ -1,8 +1,7 @@
 Router.route('posts',
   waitOn: ->
-    Meteor.subscribe 'userData'
+    Meteor.subscribe 'posts'
   onBeforeAction: ->
-    Session.set 'currentRoute', 'posts'
     @next()
 )
 
@@ -13,3 +12,5 @@ Router.route 'about-us',
 Router.route 'support'
 Router.route 'privacy'
 Router.route 'terms'
+
+

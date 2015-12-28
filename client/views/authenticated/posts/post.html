@@ -9,14 +9,14 @@
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Tai LE</h4>
-                        {{title}}
+                        <h4 class="media-heading">Tai LE {{userData}}</h4>
+                        <p>{{titleText}}</p>
                     </div>
                 </div>
             </div>
 
             {{#if isImage url}}
-                <img src="{{url}}" alt="...">
+                <img src="{{url}}" alt="..." style="max-height: 266px">
             {{else}}
                 <div class="embed-responsive-item">
                     <video width="100%" controls>

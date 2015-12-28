@@ -75,21 +75,8 @@ body {
         //opacity: 0;
       }
 
-      .post {
-        background-color: #28b697;
-        padding: 20px;
-        margin: 54px 0;
-        border-radius: 5px;
-
-        input[type="text"] {
-          background-color: #28b697;
-          border-color: #28b697;
-          box-shadow: none;
-        }
-
-        a {
-          margin-left: 15px;
-        }
+      .upload-area {
+        padding: 37px 0;
       }
     }
   }

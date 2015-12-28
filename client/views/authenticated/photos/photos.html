@@ -1,9 +1,11 @@
 <template name="photos">
-    <h1>photos</h1>
-    <p>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </p>
-    <p>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </p>
+    <br/>
+
+    <div class="row">
+        {{#each posts}}
+            {{> post}}
+        {{else}}
+            <p class="alert alert-warning">No posts uploaded yet!</p>
+        {{/each}}
+    </div>
 </template>
