@@ -54,14 +54,29 @@ body {
     }
   }
 
-  #navbar {
-    .dropdown > a {
-      padding: 15px 0;
-    }
+  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+  }
 
-    .avatar {
-      width: 30px;
-    }
+  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
+    color: #9d9d9d;
+  }
+
+  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background: none;
+  }
+
+  .nav > li > a {
+    color: #9d9d9d;
+  }
+
+  .nav > li > a:hover, .nav > li > a:focus, .nav > li > a.active {
+    color: #fff;
+    background: none;
+  }
+
+  .nav.nav-post > li > a:hover, .nav.nav-post > li > a:focus, .nav.nav-post > li > a.active {
+    border-bottom: 3px #00cc94 solid;
   }
 
   .jumbotron {
@@ -76,7 +91,7 @@ body {
       }
 
       .upload-area {
-        padding: 37px 0;
+        padding: 35px 0;
       }
     }
   }

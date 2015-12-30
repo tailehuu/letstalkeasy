@@ -5,12 +5,23 @@ Router.route('posts',
     @next()
 )
 
-Router.route 'photos'
-Router.route 'videos'
+Router.route('photos'
+  waitOn: ->
+    Meteor.subscribe 'posts'
+)
+
+Router.route('videos'
+  waitOn: ->
+    Meteor.subscribe 'posts'
+)
+
 Router.route 'about-us',
   template: 'aboutUs'
+
 Router.route 'support'
+
 Router.route 'privacy'
+
 Router.route 'terms'
 
 

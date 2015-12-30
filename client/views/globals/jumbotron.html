@@ -5,7 +5,7 @@
                 <div class="col-md-6 col-md-offset-3">
                     {{> upload }}
 
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav nav-post">
                         <li><a href="{{pathFor 'posts'}}" class="{{isActiveRoute 'posts'}}">ALL POSTS</a></li>
                         <li><a href="{{pathFor 'photos'}}" class="{{isActiveRoute 'photos'}}">PHOTOS</a></li>
                         <li><a href="{{pathFor 'videos'}}" class="{{isActiveRoute 'videos'}}">VIDEOS</a></li>
@@ -15,7 +15,7 @@
                             <a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-th"></span></a>
+                            <a href="#" class="active"><span class="glyphicon glyphicon-th"></span></a>
                         </li>
                     </ul>
                 </div>
