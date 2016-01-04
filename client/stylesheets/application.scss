@@ -29,6 +29,10 @@ html {
 
 body {
 
+  .navbar-inverse {
+    background-color: #333333;
+  }
+
   > .container {
     padding: 0 15px 0;
   }
@@ -48,6 +52,8 @@ body {
   }
 
   .footer {
+    display: none;
+
     > .container {
       padding: 20px 15px 0 15px;
       text-align: center;
@@ -67,7 +73,7 @@ body {
   }
 
   .nav > li > a {
-    color: #9d9d9d;
+    color: #fff;
   }
 
   .nav > li > a:hover, .nav > li > a:focus, .nav > li > a.active {
@@ -76,14 +82,15 @@ body {
   }
 
   .nav.nav-post > li > a:hover, .nav.nav-post > li > a:focus, .nav.nav-post > li > a.active {
-    border-bottom: 3px #00cc94 solid;
+    border-bottom: 3px #1bbc9b solid;
   }
 
   .jumbotron {
-    background: url("images/jumbotron.jpg") no-repeat center center;
+    background: url("images/ball1.jpg") no-repeat center center;
     color: #ffffff;
     margin-bottom: 0px;
-    height: 300px;
+    height: 400px;
+    background-size: cover;
 
     .container {
       .upload-area input[type="file"] {
@@ -91,7 +98,11 @@ body {
       }
 
       .upload-area {
-        padding: 35px 0;
+        padding: 85px 0;
+      }
+
+      .nav-post {
+        text-transform: uppercase;
       }
     }
   }

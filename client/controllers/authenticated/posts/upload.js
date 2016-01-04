@@ -1,4 +1,4 @@
-Template.uploader.events({
+Template.upload.events({
   'submit #upload' (e, template) {
     e.preventDefault();
 
