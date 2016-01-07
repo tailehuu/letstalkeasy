@@ -29,6 +29,10 @@ html {
 
 body {
 
+  *, *:before, *:after {
+    box-sizing: border-box !important;
+  }
+
   .navbar-inverse {
     background-color: #333333;
   }
@@ -49,6 +53,31 @@ body {
     .media-left .media-object {
       max-width: 64px;
     }
+
+    .follow {
+      padding-top: 20px;
+      color: #CDD1D8;
+    }
+
+    /* begin */
+    .main.row {
+      -moz-column-width: 18em;
+      -webkit-column-width: 18em;
+      -moz-column-gap: 1em;
+      -webkit-column-gap: 1em;
+
+      .item {
+        display: inline-block;
+        padding: .25rem;
+        width: 100%;
+      }
+
+      .well {
+        position: relative;
+        display: block;
+      }
+    }
+    /* end */
   }
 
   .footer {

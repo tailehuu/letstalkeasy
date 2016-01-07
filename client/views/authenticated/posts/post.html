@@ -1,5 +1,6 @@
 <template name="post">
-    <div class="col-sm-6 col-md-4">
+    <!--<div class="col-sm-6 col-md-4">-->
+    <div class="item">
         <div class="thumbnail">
             <div class="caption">
                 <div class="media">
@@ -16,7 +17,7 @@
             </div>
 
             {{#if isImage url}}
-                <img src="{{url}}" alt="..." style="max-height: 266px">
+                <img src="{{url}}" alt="...">
             {{else}}
                 <div class="embed-responsive-item">
                     <video width="100%" controls>
