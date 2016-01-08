@@ -93,6 +93,18 @@ body {
     }
   }
 
+  .online-status {
+    color: #7EBA00;
+  }
+
+  .offline-status {
+    color: #E0E0E0;
+  }
+
+  .idle-status {
+    color: #FCD117;
+  }
+
   .footer {
     > .container {
       padding: 20px 15px 0 15px;
