@@ -3,6 +3,10 @@ Template.post.helpers({
     const formats = [ 'jpg', 'jpeg', 'png', 'gif' ];
     return _.find( formats, ( format ) => url.indexOf( format ) > -1 );
   },
+  isVideo( url ) {
+    const formats = [ 'mp4' ];
+    return _.find( formats, ( format ) => url.indexOf( format ) > -1 );
+  },
   titleText: function (number = 80) {
     if (this.title.length < number) {
       return this.title;

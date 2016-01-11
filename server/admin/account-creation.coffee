@@ -1,21 +1,6 @@
-determineEmail = (user)->
-  if user.emails
-    emailAddress = user.emails[0].address
-  else if user.services
-    services = user.services
-    emailAddress = switch
-      when services.facebook then services.facebook.email
-      when services.github then services.github.email
-      when services.google then services.google.email
-      when services.twitter then null
-      else
-        null
-  else
-    null
-
 Accounts.onCreateUser((options, user)->
   userData =
-    email: determineEmail(user)
+    email: Meteor.call('determineEmail', user)
     name: if options.profile then options.profile.name else ""
 
   if userData.email != null
@@ -50,4 +35,50 @@ Meteor.methods(
       subject: "Welcome aboard, team matey!"
       html: emailTemplate
     )
+)
+
+# determineEmail: determine email of current user
+Meteor.methods(
+  determineEmail: (user)->
+    check(user, Object)
+    if user.emails
+      emailAddress = user.emails[0].address
+    else if user.services
+      services = user.services
+      emailAddress = switch
+        when services.facebook then services.facebook.email
+        when services.github
+          if services.github.email
+            services.github.email
+          else
+            services.github.username
+        when services.google then services.google.email
+        when services.twitter then null
+        else
+          null
+    else
+      null
+)
+
+# createStoragePath: create storage Path for current user
+Meteor.methods(
+  createStoragePath: (user)->
+    check(user, Object)
+    if user.emails
+      emailAddress = user.emails[0].address
+    else if user.services
+      services = user.services
+      emailAddress = switch
+        when services.facebook then services.facebook.email
+        when services.github
+          if services.github.email
+            services.github.email
+          else
+            services.github.username
+        when services.google then services.google.email
+        when services.twitter then null
+        else
+          null
+    else
+      null
 )

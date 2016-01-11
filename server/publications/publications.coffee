@@ -12,6 +12,7 @@ Meteor.publish('userData', ->
   # specified fields. Note: Meteor stores OAuth emails differently than it does
   # for accounts created using the standard accounts-password package.
   if currentUser
+    ###
     Meteor.users.find({_id: currentUser}, {
       fields: {
         "services.facebook.email": 1
@@ -21,7 +22,11 @@ Meteor.publish('userData', ->
         "emails.address[0]": 1
         "profile": 1
       }
-    })
+    })\
+    ###
+
+    # return full user's info
+    Meteor.users.find({_id: currentUser})
   else
     this.ready()
 )

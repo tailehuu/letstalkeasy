@@ -1,3 +1,7 @@
+Template.upload.onRendered( function() {
+  $("#upload").validate();
+});
+
 Template.upload.events({
   'submit #upload' (e, template) {
     e.preventDefault();

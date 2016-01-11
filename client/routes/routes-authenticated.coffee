@@ -1,6 +1,6 @@
 Router.route('posts',
   waitOn: ->
-    Meteor.subscribe 'posts'
+    [ Meteor.subscribe('posts'), Meteor.subscribe('userData') ]
   onBeforeAction: ->
     @next()
 )

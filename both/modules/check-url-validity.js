@@ -7,12 +7,14 @@ let _isNotAmazonUrl = ( url ) => {
 };
 
 let _validateUrl = ( url ) => {
-  if ( _fileExistsInDatabase( url ) ) {
-    return { valid: false, error: "Sorry, this file already exists!" };
-  }
+  if (url !== "") {
+    if ( _fileExistsInDatabase( url ) ) {
+      return { valid: false, error: "Sorry, this file already exists!" };
+    }
 
-  if ( _isNotAmazonUrl( url ) ) {
-    return { valid: false, error: "Sorry, this isn't a valid URL!" };
+    if ( _isNotAmazonUrl( url ) ) {
+      return { valid: false, error: "Sorry, this isn't a valid URL!" };
+    }
   }
 
   return { valid: true };
