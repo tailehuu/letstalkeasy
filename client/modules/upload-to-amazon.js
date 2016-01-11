@@ -18,7 +18,7 @@ let _uploadFileToAmazon = ( post ) => {
     _addPostToDatabase({
       title: post.title,
       url: "",
-      type: ""
+      type: "text/plain"
     });
   } else {
     const uploader = new Slingshot.Upload( "uploadToAmazonS3" );

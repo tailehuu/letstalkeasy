@@ -1,9 +1,9 @@
 <template name="photos">
-    <div class="grid-content row">
+    <div class="{{#if getPublishedCount 'numberOfPhotos'}}grid-content{{/if}} row">
         {{#each posts}}
             {{> post}}
         {{else}}
-            <p class="alert alert-warning">No posts uploaded yet!</p>
+            <p class="alert alert-warning">No photos uploaded yet!</p>
         {{/each}}
     </div>
 </template>
