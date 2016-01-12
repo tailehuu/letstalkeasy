@@ -1,0 +1,53 @@
+<template name="serverStatus">
+    <h3>All user connections on server:</h3>
+
+    <h4>Anonymous</h4>
+    <table class="table table-condensed table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Username/Connection</th>
+            <th>Idle</th>
+            <th>Last Activity</th>
+            <th>IP (<i>Last</i>)</th>
+            <th style="width: 256px">User Agent (<i>Last</i>)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each anonymous}}
+            {{> serverConnection}}
+        {{/each}}
+        </tbody>
+    </table>
+
+    <h4>Users</h4>
+    <table class="table table-condensed table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Username/Connection</th>
+            <th>Idle</th>
+            <th>Last Activity</th>
+            <th>IP (<i>Last</i>)</th>
+            <th style="width: 256px">User Agent (<i>Last</i>)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+            <tr class="bold {{userClass}}">
+                <td>id: {{_id}}<br>(last login {{localeTime status.lastLogin.date}})</td>
+                <td>{{status.idle}}</td>
+                <td>{{#with status.lastActivity}}
+                    {{> relTime}}
+                {{else}}
+                    (active or not monitoring)
+                {{/with}}
+                </td>
+                <td><i>{{status.lastLogin.ipAddr}}</i></td>
+                <td><i>{{status.lastLogin.userAgent}}</i></td>
+            </tr>
+            {{#each connections}}
+                {{> serverConnection}}
+            {{/each}}
+        {{/each}}
+        </tbody>
+    </table>
+</template>

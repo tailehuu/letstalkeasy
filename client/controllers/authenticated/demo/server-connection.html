@@ -1,0 +1,14 @@
+<template name="serverConnection">
+    <tr class="{{connectionClass}}">
+        <td>server connection - {{_id}}{{#with loginTime}}<br>(login {{this}}){{/with}}</td>
+        <td>{{idle}}</td>
+        <td>{{#with lastActivity}}
+            {{> relTime}}
+        {{else}}
+            (active or not monitoring)
+        {{/with}}
+        </td>
+        <td>{{ipAddr}}</td>
+        <td>{{userAgent}}</td>
+    </tr>
+</template>

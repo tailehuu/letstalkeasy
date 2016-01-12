@@ -4,7 +4,6 @@
 ###
 
 # /profile
-
 Meteor.publish('userData', ->
   # Cache this.userId first since we use it twice below.
   currentUser = this.userId
@@ -30,3 +29,27 @@ Meteor.publish('userData', ->
   else
     this.ready()
 )
+
+# user-status
+Meteor.publish null, ->
+  [
+    Meteor.users.find { "status.online": true }, # online users only
+      fields:
+        status: 1,
+        username: 1
+    UserStatus.connections.find()
+  ]
+
+# /posts
+Meteor.publish 'posts', ->
+  data = Posts.find('userId': @userId)
+  Counts.publish this, 'numberOfVideos', Posts.find(
+    'userId': @userId
+    'type': 'video/mp4')
+  Counts.publish this, 'numberOfPhotos', Posts.find(
+    'userId': @userId
+    'type': $ne: 'video/mp4')
+  Counts.publish this, 'numberOfPosts', Posts.find('userId': @userId)
+  if data
+    return data
+  @ready()

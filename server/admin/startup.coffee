@@ -2,6 +2,9 @@ Meteor.startup(->
   # Environment Variable: MAIL_URL
   process.env.MAIL_URL = "Insert your own MAIL_URL from your email provider here."
 
+  # Try setting this so it works on meteor.com (https://github.com/oortcloud/unofficial-meteor-faq)
+  process.env.HTTP_FORWARDED_COUNT = 1
+
   createServiceConfiguration = (service,clientId,secret)->
     ServiceConfiguration.configurations.remove(
       service: service
@@ -41,7 +44,7 @@ Meteor.startup(->
   createServiceConfiguration('twitter', 'LIGtJkPkpFbqttl5iblXgH4x2', 'Xs4pnWT5YjIMtieQvW0CN08Ttyl33Mqc6PwZo38kJTXT7daPzi')
   # Generate your Client & Secret here: https://apps.twitter.com/
 
-  # Create an array of user accounts.
+  # create dummies data
   users = [
     { name: "Admin", email: "admin@admin.com", password: "password" },
     { name: "lte one", email: "lte1@admin.com", password: "password" },
@@ -66,6 +69,7 @@ Meteor.startup(->
         profile:
           name: user.name
       )
+  return
 
   # Custom Browser Policies
   customBrowserPolicies()

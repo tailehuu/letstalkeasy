@@ -8,7 +8,7 @@
 # (set in the appropriate file in /client/routes/) is equal to the name passed
 # to the helper in the template.
 
-UI.registerHelper('currentRoute', (route) ->
+Template.registerHelper('currentRoute', (route) ->
   if Session.equals 'currentRoute', route then 'active' else ''
 )
 
@@ -17,7 +17,7 @@ UI.registerHelper('currentRoute', (route) ->
 # user's email regardless of whether they're using an OAuth login or the
 # accounts-password login (Meteor doesn't offer a native solution for this).
 
-UI.registerHelper('userIdentity', (userId) ->
+Template.registerHelper('userIdentity', (userId) ->
   getUser = Meteor.users.findOne({_id: userId})
   if getUser.emails
     getUser.emails[0].address
@@ -33,3 +33,7 @@ UI.registerHelper('userIdentity', (userId) ->
   else
     getUser.profile.name
 )
+
+Template.registerHelper "userStatus", UserStatus
+Template.registerHelper "localeTime", (date) -> date?.toLocaleString()
+Template.registerHelper "relativeTime", relativeTime

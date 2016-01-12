@@ -55,3 +55,6 @@ themeteorchef:bert      # alert
 
 npm-container
 tmeasday:publish-counts
+mizzao:user-status
+mizzao:timesync
+mrt:moment-timezone
