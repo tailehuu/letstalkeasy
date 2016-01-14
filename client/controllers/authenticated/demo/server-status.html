@@ -34,7 +34,7 @@
         {{#each users}}
             <tr class="bold {{userClass}}">
                 <td>id: {{_id}}<br>(last login {{localeTime status.lastLogin.date}})</td>
-                <td>{{status.idle}}</td>
+                <td>idle: {{status.idle}}, online: {{status.online}}</td>
                 <td>{{#with status.lastActivity}}
                     {{> relTime}}
                 {{else}}

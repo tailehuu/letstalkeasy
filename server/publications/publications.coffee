@@ -33,10 +33,16 @@ Meteor.publish('userData', ->
 # user-status
 Meteor.publish null, ->
   [
-    Meteor.users.find { "status.online": true }, # online users only
-      fields:
-        status: 1,
-        username: 1
+    Meteor.users.find {}, # online users only
+      fields: {
+        "services.facebook.email": 1
+        "services.github.email": 1
+        "services.google.email": 1
+        "services.twitter.screenName": 1
+        "emails.address[0]": 1
+        "profile": 1
+        "status": 1
+      }
     UserStatus.connections.find()
   ]
 

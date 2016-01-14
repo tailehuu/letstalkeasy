@@ -49,11 +49,6 @@ Meteor.startup(->
     { name: "Admin", email: "admin@admin.com", password: "password" },
     { name: "lte one", email: "lte1@admin.com", password: "password" },
     { name: "lte two", email: "lte2@admin.com", password: "password" },
-    { name: "lte three", email: "lte3@admin.com", password: "password" },
-    { name: "lte four", email: "lte4@admin.com", password: "password" },
-    { name: "lte five", email: "lte5@admin.com", password: "password" },
-    { name: "lte six", email: "lte6@admin.com", password: "password" },
-    { name: "lte seven", email: "lte7@admin.com", password: "password" },
   ]
 
   # Loop through array of user accounts.

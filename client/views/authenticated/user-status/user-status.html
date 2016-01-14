@@ -1,0 +1,20 @@
+<template name="userStatus">
+    <ul class="media-list">
+
+        {{#each users}}
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="images/avatar.jpg" width="30" alt="...">
+                    </a>
+                </div>
+                <div class="media-body media-middle">
+                    <h6 class="media-heading">{{_id}}</h6>
+                </div>
+                <div class="media-right media-middle">
+                    <i class="fa fa-circle {{userClass}}-status"></i>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</template>
