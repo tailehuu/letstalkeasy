@@ -42,5 +42,8 @@ Router.route 'privacy'
 
 Router.route 'terms'
 Router.route 'demo'
+Router.route('webrtc/:roomName'
+  name: 'webrtc'
+)
 
 

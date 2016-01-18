@@ -47,7 +47,6 @@ check                   # validation
 audit-argument-checks
 
 edgee:slingshot         # upload file to S3
-browser-policy
 meteorhacks:npm
 
 themeteorchef:bert      # alert
@@ -58,3 +57,7 @@ tmeasday:publish-counts
 mizzao:user-status
 mizzao:timesync
 mrt:moment-timezone
+fds:webrtc
+force-ssl
+fds:streams
+random
