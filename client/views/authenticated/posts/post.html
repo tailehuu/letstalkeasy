@@ -5,18 +5,18 @@
                 <div class="media">
                     <div class="media-left">
                         <a href="{{pathFor 'postDetail'}}">
-                            <img class="media-object" src="images/1.jpg" alt="...">
+                            <img class="media-object" src="/images/1.jpg" alt="...">
                         </a>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Tai LE</h4>
-                        <p>{{titleText}}</p>
+                        <p><a href="{{pathFor 'postDetail'}}">{{titleText}}</a></p>
                     </div>
                 </div>
             </div>
 
             {{#if isImage url}}
-                <img src="{{url}}" alt="...">
+                <img src="{{url}}" alt="{{url}}">
             {{else}}
                 {{#if isVideo url}}
                     <div class="embed-responsive-item">
