@@ -58,6 +58,5 @@ mizzao:user-status
 mizzao:timesync
 mrt:moment-timezone
 fds:webrtc
-force-ssl
 fds:streams
 random
