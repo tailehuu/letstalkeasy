@@ -13,6 +13,18 @@ let _addPostToDatabase = ( post ) => {
   });
 };
 
+let _updateProfileToDatabase = ( post ) => {
+  Meteor.call( "updateProfileInDatabase", post, ( error ) => {
+	  	
+	    if ( error ) {
+	        Bert.alert( error.reason, "warning" );
+	      } else {
+	        Bert.alert( "Successfully changed!", "success" );
+	      }
+	    Router.go("feed");
+	    });
+};
+
 let _uploadFileToAmazon = ( post ) => {
   if(post.files.length == 0) {
     _addPostToDatabase({
@@ -46,3 +58,35 @@ let upload = ( options ) => {
 };
 
 Modules.client.uploadToAmazonS3 = upload;
+
+let _uploadAvatarFileToAmazon = ( post ) => {
+	  if(post.files.length == 0) {
+		  _updateProfileToDatabase({	    		  
+    		  profile: post.profile
+            });	
+	  } else {
+	    const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+	    let file = post.files[0];
+
+	    uploader.send( file, ( error, url ) => {
+	      if ( error ) {
+	        Bert.alert( error.message, "warning" );
+	      } else {
+	    	  post.profile.avatar = url;
+	    	  _updateProfileToDatabase({	    		  
+	    		  profile: post.profile
+	            });	    	  
+	      }
+	    });
+	  }
+};
+
+let uploadAvatar = ( options ) => {
+	  let post = options.post;
+	  _uploadAvatarFileToAmazon( post );
+	};
+	  
+Modules.client.uploadAvatarToAmazonS3 = uploadAvatar;
+
+
+

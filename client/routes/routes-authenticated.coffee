@@ -26,12 +26,14 @@ Router.route('posts/:_id'
 # user route
 Router.route('feed'
   waitOn: ->
-    Meteor.subscribe 'posts'
+  	[ Meteor.subscribe('posts'), Meteor.subscribe('userData') ]
 )
 
 Router.route 'followers'
 Router.route 'following'
-Router.route 'settings'
+Router.route('settings',
+  waitOn: -> Meteor.subscribe('userData')
+)
 
 Router.route 'about-us',
   template: 'aboutUs'

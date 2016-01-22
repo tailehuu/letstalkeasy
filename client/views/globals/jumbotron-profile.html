@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div id="profile" style="text-align: center; margin: 2px 0">
-                        <div class="row"><img src="/images/avatar.jpg" width="99" /></div>
-                        <div class="row"><h3>Jessica Tuan</h3></div>
-                        <div class="row">Designer and Developer living in San Diego, CA</div>
-                        <div class="row"><a href="#">jessicatuan.com</a></div>
+                        <div class="row"><img src="{{currentUser.profile.avatar}}" width="99" /></div>
+                        <div class="row"><h3>{{currentUser.profile.name}}</h3></div>
+                       <!--  <div class="row">Designer and Developer living in San Diego, CA</div> -->
+                        <div class="row"><a href="#">{{userIdentity currentUser._id}}</a></div>
                     </div>
 
                     <ul class="nav navbar-nav nav-post">

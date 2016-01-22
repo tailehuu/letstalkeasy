@@ -29,7 +29,7 @@ Meteor.startup(->
       else ServiceConfiguration.configurations.insert(config.generic)
 
   # Facebook
-  createServiceConfiguration('facebook', '537973636357552', 'a9cf3a7ccba92e2cd11ecc62f836ad92')
+  createServiceConfiguration('facebook', '1063899113676317', '1a07e579da1561828f2b67d8b1f6259c')
   # Generate your Client & Secret here: https://developers.facebook.com/apps/
 
   # GitHub
@@ -46,9 +46,7 @@ Meteor.startup(->
 
   # create dummies data
   users = [
-    { name: "Admin", email: "admin@admin.com", password: "password" },
-    { name: "lte one", email: "lte1@admin.com", password: "password" },
-    { name: "lte two", email: "lte2@admin.com", password: "password" },
+
   ]
 
   # Loop through array of user accounts.
