@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74d2f968-a34c-40f9-afde-64f58774f880" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/controllers/public/index.js" afterPath="$PROJECT_DIR$/client/controllers/public/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/routes/routes-authenticated.coffee" afterPath="$PROJECT_DIR$/client/routes/routes-authenticated.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/authenticated/settings/settings.html" afterPath="$PROJECT_DIR$/client/views/authenticated/settings/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js" afterPath="$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/controllers/public/sign-in-with-email-modal.js" afterPath="$PROJECT_DIR$/client/controllers/public/sign-in-with-email-modal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/modules/upload-to-amazon.js" afterPath="$PROJECT_DIR$/client/modules/upload-to-amazon.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/both/methods/insert/users.js" afterPath="$PROJECT_DIR$/both/methods/insert/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="simplysocial.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/both/methods/insert/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -79,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload-to-amazon.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="upload-to-amazon.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/modules/upload-to-amazon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.67264575">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -99,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="startup.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="startup.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/admin/startup.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09192825">
+            <state vertical-scroll-proportion="0.0">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
@@ -168,14 +164,14 @@
         <option value="$PROJECT_DIR$/client/lib/config.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.meteor/packages" />
-        <option value="$PROJECT_DIR$/both/methods/insert/users.js" />
         <option value="$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js" />
         <option value="$PROJECT_DIR$/client/controllers/public/index.js" />
         <option value="$PROJECT_DIR$/client/controllers/public/sign-in-with-email-modal.js" />
-        <option value="$PROJECT_DIR$/client/modules/upload-to-amazon.js" />
         <option value="$PROJECT_DIR$/client/routes/routes-authenticated.coffee" />
         <option value="$PROJECT_DIR$/client/views/authenticated/settings/settings.html" />
         <option value="$PROJECT_DIR$/server/admin/startup.coffee" />
+        <option value="$PROJECT_DIR$/both/methods/insert/users.js" />
+        <option value="$PROJECT_DIR$/client/modules/upload-to-amazon.js" />
       </list>
     </option>
   </component>
@@ -581,6 +577,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="both" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1066,22 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/both/methods/insert/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/controllers/public/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1094,14 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/modules/upload-to-amazon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1124,8 +1100,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/admin/startup.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09192825">
+        <state vertical-scroll-proportion="0.0">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/both/methods/insert/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/controllers/authenticated/settings/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/modules/upload-to-amazon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67264575">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding />
         </state>
       </provider>

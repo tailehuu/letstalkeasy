@@ -18,7 +18,7 @@ let _updateProfileToDatabase = (post) => {
         if (error) {
             Bert.alert(error.reason, "warning");
         } else {
-            Bert.alert("Successfully changed!", "success");
+            Bert.alert("Successfully updated!", "success");
         }
         Router.go("feed");
     });
