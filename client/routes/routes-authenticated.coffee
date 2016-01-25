@@ -1,6 +1,6 @@
 Router.route('posts',
   waitOn: ->
-    [ Meteor.subscribe('posts'), Meteor.subscribe('userData') ]
+    [Meteor.subscribe('posts'), Meteor.subscribe('userData')]
   onBeforeAction: ->
     @next()
 )
@@ -26,7 +26,7 @@ Router.route('posts/:_id'
 # user route
 Router.route('feed'
   waitOn: ->
-  	[ Meteor.subscribe('posts'), Meteor.subscribe('userData') ]
+    [Meteor.subscribe('posts'), Meteor.subscribe('userData')]
 )
 
 Router.route 'followers'

@@ -7,153 +7,136 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h2>Settings</h2>
-
-{{#if currentUser}}
-                       
-                   
-
-
-
-            <form id="setting" method="post">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Account</h4>
+            {{#if currentUser}}
+                <form id="setting" method="post">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Account</h4>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                        {{#if currentUser.profile.avatar}}
-                        <img src="{{currentUser.profile.avatar}}" width="100%"/>
-                        {{else}}
-                        <img src="/images/no-image.png" width="100%"/>
-                        {{/if}}
-                        </p>
-                        <input type="file" id="avatarUpload">
-                        
-                    </div>
-                    <div class="col-md-9">
-                    
-                     {{#if userIdentity currentUser._id}}
-                                    
-                                
-                                
-                        <div class="form-group input-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>
+                                {{#if currentUser.profile.avatar}}
+                                    <img src="{{currentUser.profile.avatar}}" width="100%"/>
+                                {{else}}
+                                    <img src="/images/no-image.png" width="100%"/>
+                                {{/if}}
+                            </p>
+                            <input type="file" id="avatarUpload">
+                        </div>
+                        <div class="col-md-9">
+                            {{#if userIdentity currentUser._id}}
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" class="form-control" name="emailAddress" disabled="disabled"
+                                           placeholder="Jessica Tuan" value="{{userIdentity currentUser._id}}"
+                                           aria-describedby="sizing-addon1">
+                                </div>
+                            {{/if}}
+                            <div class="form-group input-group">
                             <span class="input-group-addon" id="sizing-addon1"><span
                                     class="glyphicon glyphicon-user"></span></span>
-                            <input type="text" class="form-control" name="emailAddress" disabled="disabled" placeholder="Jessica Tuan" value="{{userIdentity currentUser._id}}"
-                                   aria-describedby="sizing-addon1">
-                        </div>
-                        {{/if}}
-                        <div class="form-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1"><span
-                                    class="glyphicon glyphicon-user"></span></span>
-                            <input type="text" class="form-control" name="profilename" placeholder="Jessica Tuan" value="{{currentUser.profile.name}}"
-                                   aria-describedby="sizing-addon1">
-                        </div>
-                        <!-- <div class="form-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control required" name="old_password" id="old_password" placeholder="Old Password">
-                        </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control required" name="password" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group input-group">
-                            <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control required" id="confirm_password" name="confirm_password"  placeholder="Confirm Password">
-                        </div> -->
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Notifications</h4>
-
-                        <div class="checkbox">
-                            <label>
-                            {{#if currentUser.profile.marked_as_favourites}}
-                            <input type="checkbox" checked="checked" id="marked_as_favourites" name="marked_as_favourites">
-                            {{else}}
-                            <input type="checkbox" id="marked_as_favourites" name="marked_as_favourites">
-                            {{/if}}
-                                email me when my posts are marked as favourites
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                            {{#if currentUser.profile.i_am_mentioned}}
-                            <input type="checkbox" checked="checked" id="i_am_mentioned" name="i_am_mentioned">
-                            {{else}}
-                            <input type="checkbox" id="i_am_mentioned" name="i_am_mentioned">
-                            {{/if}}
-                                email me when I'm mentioned
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                            {{#if currentUser.profile.i_get_a_reply}}
-                            <input type="checkbox" checked="checked" id="i_get_a_reply" name="i_get_a_reply">
-                            {{else}}
-                            <input type="checkbox" id="i_get_a_reply" name="i_get_a_reply">
-                            {{/if}}
-                                email me when I get a reply
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                            {{#if currentUser.profile.someone_follows_me}}
-                            <input type="checkbox" checked="checked" id="someone_follows_me" name="someone_follows_me">
-                            {{else}}
-                            <input type="checkbox" id="someone_follows_me" name="someone_follows_me">
-                            {{/if}}
-                                email me when someone follows me
-                            </label>
+                                <input type="text" class="form-control" name="profilename" placeholder="Jessica Tuan"
+                                       value="{{currentUser.profile.name}}"
+                                       aria-describedby="sizing-addon1">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <hr>
+                    <hr>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Privacy</h4>
-
-                        <div class="checkbox">
-                            <label>
-	                            {{#if currentUser.profile.anyone_to_tag_me}}
-	                            <input type="checkbox" checked="checked" id="anyone_to_tag_me" name="anyone_to_tag_me">
-	                            {{else}}
-	                            <input type="checkbox" id="anyone_to_tag_me" name="anyone_to_tag_me">
-	                            {{/if}}
-                                allow anyone to tag me
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                            {{#if currentUser.profile.location_to_my_posts}}
-	                            <input type="checkbox" checked="checked" id="location_to_my_posts" name="location_to_my_posts">
-	                            {{else}}
-	                            <input type="checkbox" id="location_to_my_posts" name="location_to_my_posts">
-	                            {{/if}}
-                                add a location to my posts
-                            </label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Notifications</h4>
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.marked_as_favourites}}
+                                        <input type="checkbox" checked="checked" id="marked_as_favourites"
+                                               name="marked_as_favourites">
+                                    {{else}}
+                                        <input type="checkbox" id="marked_as_favourites" name="marked_as_favourites">
+                                    {{/if}}
+                                    email me when my posts are marked as favourites
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.i_am_mentioned}}
+                                        <input type="checkbox" checked="checked" id="i_am_mentioned"
+                                               name="i_am_mentioned">
+                                    {{else}}
+                                        <input type="checkbox" id="i_am_mentioned" name="i_am_mentioned">
+                                    {{/if}}
+                                    email me when I'm mentioned
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.i_get_a_reply}}
+                                        <input type="checkbox" checked="checked" id="i_get_a_reply"
+                                               name="i_get_a_reply">
+                                    {{else}}
+                                        <input type="checkbox" id="i_get_a_reply" name="i_get_a_reply">
+                                    {{/if}}
+                                    email me when I get a reply
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.someone_follows_me}}
+                                        <input type="checkbox" checked="checked" id="someone_follows_me"
+                                               name="someone_follows_me">
+                                    {{else}}
+                                        <input type="checkbox" id="someone_follows_me" name="someone_follows_me">
+                                    {{/if}}
+                                    email me when someone follows me
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <hr>
+                    <hr>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-default">Save Changes</button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Privacy</h4>
+
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.anyone_to_tag_me}}
+                                        <input type="checkbox" checked="checked" id="anyone_to_tag_me"
+                                               name="anyone_to_tag_me">
+                                    {{else}}
+                                        <input type="checkbox" id="anyone_to_tag_me" name="anyone_to_tag_me">
+                                    {{/if}}
+                                    allow anyone to tag me
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    {{#if currentUser.profile.location_to_my_posts}}
+                                        <input type="checkbox" checked="checked" id="location_to_my_posts"
+                                               name="location_to_my_posts">
+                                    {{else}}
+                                        <input type="checkbox" id="location_to_my_posts" name="location_to_my_posts">
+                                    {{/if}}
+                                    add a location to my posts
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </form>
-             {{/if}}
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-default">Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+            {{/if}}
         </div>
     </div>
 </template>
