@@ -59,3 +59,9 @@ Meteor.publish 'posts', ->
   if data
     return data
   @ready()
+
+# notifications
+Meteor.publish 'notifications', ->
+  Notifications.find
+    userId: @userId
+    read: false
