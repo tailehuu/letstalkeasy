@@ -13,5 +13,6 @@ Template.post.helpers({
     } else {
       return this.title.substring(0, number) + ' ...';
     }
-  }
+  }  
 });
+
