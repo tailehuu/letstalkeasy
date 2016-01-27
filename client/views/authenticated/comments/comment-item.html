@@ -2,8 +2,8 @@
 <li class="media">
                 <div class="media-left">
                     <a href="#">
-                    {{#if avatar}}
-                    <img class="media-object" src="{{avatar}}" width="30" alt="...">
+                    {{#if profile.avatar}}
+                    <img class="media-object" src="{{profile.avatar}}" width="30" alt="...">
                                  
                                 {{else}}
                                 <img class="media-object" src="/images/no-image.png" width="30" alt="...">
@@ -12,11 +12,12 @@
                         
                     </a>
                 </div>
+                
                 <div class="media-body media-middle">
-                    {{submittedText}}
+                <p class="media-heading"><a>{{profile.name}}</a> {{submittedText}}</p>
+                    
                 </div>
-                <div class="media-right media-middle" style="white-space: nowrap">
-                    <p>{{livestamp timepost}}</p>
-                </div>
+                <div class="time-ago">{{livestamp timepost}}</div>
+                
             </li>
 </template>

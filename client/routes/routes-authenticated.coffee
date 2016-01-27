@@ -18,7 +18,7 @@ Router.route('videos'
 Router.route('posts/:_id'
   name: 'postDetail'
   waitOn: ->
-    [Meteor.subscribe('posts'), Meteor.subscribe('comments')]
+    [Meteor.subscribe('posts'), Meteor.subscribe('comments'), Meteor.subscribe('userData')]
   data: ->
     Posts.findOne({_id: this.params._id})
 )

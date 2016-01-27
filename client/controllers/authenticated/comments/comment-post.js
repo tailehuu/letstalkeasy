@@ -1,3 +1,7 @@
+Template.commentPost.rendered = function() {
+	$('#body').autogrow()
+    
+}
 Template.commentPost.events({
   'submit form': function(e, template) {
     e.preventDefault();
@@ -27,3 +31,4 @@ Template.commentPost.events({
 	    Router.go('posts');
 	  }
 });
+

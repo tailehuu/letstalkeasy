@@ -2,11 +2,11 @@
 <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-dialog">
 	<div class="item">
-        <div class="thumbnail">
+        <div class="thumbnail post-detail">
             
 
             {{#if isImage url}}
-                <img src="{{url}}" alt="{{url}}">
+                <img width="100%" src="{{url}}" alt="{{url}}">
             {{else}}
                 {{#if isVideo url}}
                     <div class="embed-responsive-item">
@@ -22,31 +22,43 @@
                 <div class="media">
                     <div class="media-left">
                         <a href="{{pathFor 'postDetail'}}">
-                            <img class="media-object" src="/images/1.jpg" alt="...">
+                        
+                        {{#if userPost.profile.avatar}}
+                    <img class="media-object" src="{{userPost.profile.avatar}}"  alt="...">
+                                 
+                                {{else}}
+                                <img class="media-object" src="/images/no-image.png" alt="...">
+                         
+                                {{/if}}
+           
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Tai LE</h4>
-                        <p><a href="{{pathFor 'postDetail'}}">{{titleText}}</a></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 text-right" style="margin:10px 0; right: 15px">
+                    <div class="media-heading row">
+                  
+                    <div class="col-md-3"><h4 >{{userPost.profile.name}}</h4></div>
+                <div class="col-md-9 text-right" style="margin:10px 0; right: 15px">
                     <a href="#"><i class="fa fa-reply"></i></a> &nbsp;
                     <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
                     <a href="#">1h</a>
                 </div>
             </div>
+                    
+                 
+                        
+                        <p>{{titleText}}</p>
+                    </div>
+                </div>
+            </div>
+            
             {{> commentPost}}
-            <br>
-            <ul class="comments media-list">
-      {{#each comments}}
-        {{> commentItem}}
-      {{/each}}
-    </ul>
-        </div>
+            <div class="caption">
+            <ul class="comments media-list">{{#each comments}} {{>
+					commentItem}} {{/each}}
+				</ul>
+            </div>
+				
+			</div>
     </div>
 
 </div>

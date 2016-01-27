@@ -4,7 +4,13 @@
             <li class="media">
                 <div class="media-left">
                     <a href="#">
-                        <img class="media-object" src="/images/avatar.jpg" width="30" alt="...">
+                    
+                     {{#if profile.avatar}}
+                         <img class="media-object" src="{{profile.avatar}}" width="30px"/>
+                     {{else}}
+                         <img class="media-object" src="/images/no-image.png" width="30px"/>
+                     {{/if}}
+                      
                     </a>
                 </div>
                 <div class="media-body media-middle">

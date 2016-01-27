@@ -82,7 +82,10 @@ body {
         }
       }
     }
-
+	.post-detail{
+		padding: 0px !important;
+		border: 0px !important;
+	}
     .media-left .media-object {
       max-width: 64px;
     }
@@ -90,6 +93,10 @@ body {
     .follow {
       padding-top: 20px;
       color: #CDD1D8;
+    }
+    .time-ago{
+	    font-size: 0.8em;
+	    margin-left: 40px;
     }
   }
 

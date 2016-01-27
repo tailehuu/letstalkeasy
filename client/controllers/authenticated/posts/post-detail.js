@@ -21,6 +21,11 @@ Template.postDetail.helpers({
 	      return this.title.substring(0, number) + ' ...';
 	    }
 	  },
+	  userPost: function (){
+		  console.log(this.userId);
+		  var userPost = Meteor.users.findOne({_id: this.userId});
+		  return userPost;
+	  },
 	  comments: function(){
 		  return Comments.find({postId: this._id});
 	  }
