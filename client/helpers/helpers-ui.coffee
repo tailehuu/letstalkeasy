@@ -33,6 +33,10 @@ Template.registerHelper('userIdentity', (userId) ->
   else
     getUser.profile.name
 )
+Template.registerHelper 'equals', (a, b) ->
+  a == b
+Template.registerHelper 'notequals', (a, b) ->
+  a != b
 
 Template.registerHelper "userStatus", UserStatus
 Template.registerHelper "localeTime", (date) -> date?.toLocaleString()

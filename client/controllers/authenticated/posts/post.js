@@ -13,6 +13,9 @@ Template.post.helpers({
     } else {
       return this.title.substring(0, number) + ' ...';
     }
-  }  
+  },
+  idUser: function() {
+	  return this.userId;
+  }
 });
 

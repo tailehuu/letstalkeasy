@@ -66,6 +66,16 @@ Meteor.publish 'comments', ->
   if data
     return data
   @ready()
+# friends
+Meteor.publish 'friends', ->
+  data = Friends.find()
+  Counts.publish this, 'numberOfFollowing', Friends.find(
+    'following_id': @userId)
+  Counts.publish this, 'numberOfFollowers', Friends.find(
+    'follower_id': @userId)
+  if data
+    return data
+  @ready()
 # notifications
 Meteor.publish 'notifications', ->
   Notifications.find

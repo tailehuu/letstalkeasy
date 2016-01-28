@@ -12,8 +12,8 @@
 
                     <ul class="nav navbar-nav nav-post">
                         <li><a href="{{pathFor 'feed'}}" class="{{isActiveRoute 'feed'}}">jessica's feed</a></li>
-                        <li><a href="{{pathFor 'followers'}}" class="{{isActiveRoute 'followers'}}">2,542 followers</a></li>
-                        <li><a href="{{pathFor 'following'}}" class="{{isActiveRoute 'following'}}">517 following</a></li>
+                        <li><a href="{{pathFor 'followers'}}" class="{{isActiveRoute 'followers'}}">{{getPublishedCount 'numberOfFollowers'}} followers</a></li>
+                        <li><a href="{{pathFor 'following'}}" class="{{isActiveRoute 'following'}}">{{getPublishedCount 'numberOfFollowing'}} following</a></li>
                     </ul>
                 </div>
             </div>

@@ -4,58 +4,14 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <ul class="media-list">
-                <li class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="/images/avatar.jpg" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Samihah Azim</h4>
-                        <div class="follow">
-                            <span>12,832 Posts</span> &nbsp;&nbsp;&nbsp; <span>18,799 Followers</span> &nbsp;&nbsp;&nbsp; <span>5,890 Followers</span>
-                        </div>
-                    </div>
-                    <div class="media-right media-middle">
-                        <input type="checkbox" />
-                    </div>
-                </li>
+            
+            {{#each users}}
+            {{> followersItem}}
+        {{else}}
+            <p class="alert alert-warning">No posts uploaded yet!</p>
+        {{/each}}
+                
 
-                <hr>
-                <li class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="/images/avatar.jpg" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Samihah Azim</h4>
-                        <div class="follow">
-                            <span>12,832 Posts</span> &nbsp;&nbsp;&nbsp; <span>18,799 Followers</span> &nbsp;&nbsp;&nbsp; <span>5,890 Followers</span>
-                        </div>
-                    </div>
-                    <div class="media-right media-middle">
-                        <input type="checkbox" />
-                    </div>
-                </li>
-
-                <hr>
-                <li class="media">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object" src="/images/avatar.jpg" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Samihah Azim</h4>
-                        <div class="follow">
-                            <span>12,832 Posts</span> &nbsp;&nbsp;&nbsp; <span>18,799 Followers</span> &nbsp;&nbsp;&nbsp; <span>5,890 Followers</span>
-                        </div>
-                    </div>
-                    <div class="media-right media-middle">
-                        <input type="checkbox" />
-                    </div>
-                </li>
             </ul>
         </div>
     </div>

@@ -37,5 +37,24 @@ Meteor.methods({
         } catch (exception) {
             return exception;
         }
+    },
+    followUser: function (post) {
+    	check(post, Object);
+        try {
+        	console.log("type of post");
+        	console.log(post.type);
+        	if(post.type){
+        		Friends.insert({
+        			follower_id: post.currentId,
+        			following_id: post.followId,
+                    added: new Date()
+                });
+        	}else{
+        		Friends.remove({"follower_id": post.currentId,"following_id": post.followId}) ;
+        	}
+
+        } catch (exception) {
+            return exception;
+        }
     }
 });

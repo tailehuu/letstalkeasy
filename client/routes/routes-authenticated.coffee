@@ -28,9 +28,17 @@ Router.route('feed'
   waitOn: ->
     [Meteor.subscribe('posts'), Meteor.subscribe('userData')]
 )
+Router.route('followers',
+  name: 'followers'
+  waitOn: ->
+    [Meteor.subscribe('userData'), Meteor.subscribe('friends')]
+)
+Router.route('following',
+  name: 'following'
+  waitOn: ->
+    [Meteor.subscribe('userData'), Meteor.subscribe('friends')]
+)
 
-Router.route 'followers'
-Router.route 'following'
 Router.route('settings',
   waitOn: -> Meteor.subscribe('userData')
 )
