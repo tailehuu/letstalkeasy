@@ -59,7 +59,11 @@ Meteor.publish 'posts', ->
   if data
     return data
   @ready()
-
+Meteor.publish 'otherposts', ->
+  data = Posts.find()
+  if data
+    return data
+  @ready()
 # comments
 Meteor.publish 'comments', ->
   data = Comments.find()

@@ -17,5 +17,16 @@ Meteor.methods({
         } catch (exception) {
             return exception;
         }
+    },
+    countPostByUser: function (userId) {
+        check(userId, String);
+
+        try {
+            var dempost = Posts.find({ userId: userId }).count();
+        	return dempost;
+        } catch (exception) {
+            return exception;
+        }
     }
+	
 });

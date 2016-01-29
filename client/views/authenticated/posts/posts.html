@@ -1,5 +1,6 @@
 <template name="posts">
     <div class="{{#if getPublishedCount 'numberOfPosts'}}grid-content{{/if}} row">
+    {{users}}
         {{#each posts}}
             {{> post}}
         {{else}}

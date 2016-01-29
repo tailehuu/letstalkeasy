@@ -24,17 +24,16 @@ Router.route('posts/:_id'
 )
 
 # user route
-Router.route('feed'
+Router.route('feed',
   waitOn: ->
     [Meteor.subscribe('posts'), Meteor.subscribe('userData')]
 )
 Router.route('followers',
-  name: 'followers'
   waitOn: ->
-    [Meteor.subscribe('userData'), Meteor.subscribe('friends')]
+    [Meteor.subscribe('userData'), Meteor.subscribe('friends'), Meteor.subscribe('otherposts')]
 )
+
 Router.route('following',
-  name: 'following'
   waitOn: ->
     [Meteor.subscribe('userData'), Meteor.subscribe('friends')]
 )
