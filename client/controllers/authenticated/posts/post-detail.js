@@ -28,6 +28,9 @@ Template.postDetail.helpers({
 	  },
 	  comments: function(){
 		  return Comments.find({postId: this._id});
+	  },
+	  timepost: function() {
+		  return moment(this.added);
 	  }
 	});
 
@@ -41,8 +44,8 @@ Template.postDetail.events({
 		  	var element = $('#myModal');
 		    if(!element.hasClass('in')){
 		    	e.preventDefault();	  
-			    $('#myModal').modal('hide');
-		    	Router.go('posts');
+			    $('#myModal').modal('hide');			    
+		    	Router.go(Session.get( "currentURL"));
 		    }	    
 		}	 
 });

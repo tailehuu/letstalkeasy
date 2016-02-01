@@ -18,6 +18,9 @@ html {
       height: 60px;
       border-top: 1px solid #E5E7EA;
     }
+    .clear {
+     clear: both;
+    }
 
     font-family: "lato" !important;
   }
@@ -77,10 +80,19 @@ body {
         padding: .25rem;
         width: 100%;
 
-        .thumbnail {
-          padding: 0;
-        }
+                
+        
       }
+    }
+    
+    .avatar-follow{
+    	width: 64px;
+    	height: 64px;
+    	background-size: cover;
+    }
+    .like-action{
+    	position: relative;
+    	float: right;
     }
 	.post-detail{
 		padding: 0px !important;
@@ -89,7 +101,23 @@ body {
     .media-left .media-object {
       max-width: 64px;
     }
-
+	.product{
+	 	list-style: none;
+	 	.content-item{
+        	padding: 0 5px;
+        	height: 20px;
+    		overflow: hidden;
+        }
+    .thumbnail {
+          padding: 0;
+          height: 300px;
+        }
+    .image-item {
+        	height: 200px;
+        	width: 100%;
+        	background-size: cover;
+        }
+	}
     .follow {
       padding-top: 20px;
       color: #CDD1D8;

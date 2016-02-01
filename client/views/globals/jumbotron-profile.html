@@ -11,7 +11,7 @@
                     </div>
 
                     <ul class="nav navbar-nav nav-post">
-                        <li><a href="{{pathFor 'feed'}}" class="{{isActiveRoute 'feed'}}">jessica's feed</a></li>
+                        <li><a href="{{pathFor 'feed'}}" class="{{isActiveRoute 'feed'}}">{{currentUser.profile.name}}'s feed</a></li>
                         <li><a href="{{pathFor 'followers'}}" class="{{isActiveRoute 'followers'}}">{{getPublishedCount 'numberOfFollowers'}} followers</a></li>
                         <li><a href="{{pathFor 'following'}}" class="{{isActiveRoute 'following'}}">{{getPublishedCount 'numberOfFollowing'}} following</a></li>
                     </ul>

@@ -1,0 +1,25 @@
+<template name="followingItem">
+                      
+<li class="media">
+    <div class="media-left">
+        <a href="#">
+        {{#if user.profile.avatar}}
+        	<img class="media-object avatar-follow" src="{{user.profile.avatar}}" alt="...">
+                 
+                {{else}}
+                    <img src="/images/no-image.png" class="media-object avatar-follow"/>
+                {{/if}}
+            
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{user.profile.name}}</h4>
+        <div class="follow">
+            <span>{{follower_count}} Posts</span> &nbsp;&nbsp;&nbsp; <span>18,799 Followers</span> &nbsp;&nbsp;&nbsp; <span>5,890 Followers</span>
+        </div>
+    </div>
+
+</li>
+<hr>
+
+</template>

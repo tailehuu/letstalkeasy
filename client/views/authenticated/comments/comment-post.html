@@ -1,12 +1,13 @@
 <template name="commentPost">
 <form name="comment" class="comment-form form caption">
-    <div class="form-group">
-        <div class="controls">
-            <label for="body">Comment on this post</label>
-            <textarea name="body" id="body" class="form-control" rows="1"></textarea>
+    <div class="form-group row">
+    
+        <div class="controls col-md-10">
+            <input name="body" id="body" class="form-control" />
           
         </div>
+        <div class="col-md-2"><button type="submit" class="btn btn-primary">Add Comment</button></div>
     </div>
-    <button type="submit" class="btn btn-primary">Add Comment</button>
+    
   </form>
 </template>

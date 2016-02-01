@@ -18,46 +18,45 @@
                     </div>
                 {{/if}}
             {{/if}}
-			<div class="caption">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="{{pathFor 'postDetail'}}">
-                        
-                        {{#if userPost.profile.avatar}}
-                    <img class="media-object" src="{{userPost.profile.avatar}}"  alt="...">
+            <div class="caption">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="{{pathFor 'postDetail'}}">
+                            {{#if currentUser.profile.avatar}}
+                    <img class="media-object" src="{{currentUser.profile.avatar}}"  alt="...">
                                  
                                 {{else}}
                                 <img class="media-object" src="/images/no-image.png" alt="...">
                          
                                 {{/if}}
-           
-                        </a>
+                               
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <div class="media-heading">
+                            	<a>{{userPost.profile.name}}</a>
+<div class="like-action"><a href="#"><i class="fa fa-reply"></i></a> &nbsp;
+                        		<a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
+                        		</div>
+                        		<p>
+                        		{{livestamp timepost}}
+                        		</p>
+                        	</div>
+                            
+							
+                           
+                        </div>
                     </div>
-                    <div class="media-body">
-                    <div class="media-heading row">
-                  
-                    <div class="col-md-3"><h4 >{{userPost.profile.name}}</h4></div>
-                <div class="col-md-9 text-right" style="margin:10px 0; right: 15px">
-                    <a href="#"><i class="fa fa-reply"></i></a> &nbsp;
-                    <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
-                    <a href="#">1h</a>
                 </div>
-            </div>
-                    
-                 
-                        
-                        <p>{{titleText}}</p>
-                    </div>
-                </div>
-            </div>
             
-            {{> commentPost}}
+            <p class="caption">{{titleText}}</p>      
+            
             <div class="caption">
             <ul class="comments media-list">{{#each comments}} {{>
 					commentItem}} {{/each}}
 				</ul>
             </div>
-				
+			{{> commentPost}}	
 			</div>
     </div>
 

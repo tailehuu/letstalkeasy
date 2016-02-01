@@ -1,0 +1,31 @@
+<template name="followersItem">
+{{#if notequals userId currentUser._id}}                        
+<li class="media">
+    <div class="media-left">
+        <a href="#">
+        {{#if avatar}}
+        	<img class="media-object avatar-follow" src="{{avatar}}" alt="...">
+                 
+                {{else}}
+                    <img src="/images/no-image.png" class="media-object avatar-follow"/>
+                {{/if}}
+            
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{name}}</h4>
+        <div class="follow">
+            <span>{{follower_count}} Posts</span> &nbsp;&nbsp;&nbsp; <span>18,799 Followers</span> &nbsp;&nbsp;&nbsp; <span>5,890 Followers</span>
+        </div>
+    </div>
+    <div class="media-right media-middle">
+    {{#if checkBox}}
+        <input type="checkbox" class="check-follow" id="{{userId}}" checked="checked" />
+        {{else}}
+        <input type="checkbox" class="check-follow" id="{{userId}}" />
+        {{/if}}
+    </div>
+</li>
+<hr>
+{{/if}}
+</template>

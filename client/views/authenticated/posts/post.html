@@ -1,22 +1,39 @@
-<template name="post">
-    <div class="item">
-        <div class="thumbnail">
-            <div class="caption">
-                <div class="media">
-                    <div class="media-left">
-                        <a href="{{pathFor 'postDetail'}}">
-                            <img class="media-object" src="/images/1.jpg" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{idUser}}</h4>
-                        <p><a href="{{pathFor 'postDetail'}}">{{titleText}}</a></p>
+<template name="post">  
+<li class="col-md-4 col-sm-6 col-xs-12 product" >
+								<div class="thumbnail">
+                <div class="caption">
+                    <div class="media">
+                        <div class="media-left">
+                        
+                            <a href="{{pathFor 'postDetail'}}">
+                             {{#if profile.avatar}}
+                             	<img class="media-object" src="{{profile.avatar}}" alt="...">
+                                  
+                                {{else}}
+                                	<img class="media-object" src="/images/no-image.png" alt="...">
+                                 
+                                {{/if}}
+                                
+                            </a>
+                        </div>
+                       <div class="media-body">
+                        <div class="media-heading">
+                            	<a href="{{pathFor 'postDetail'}}">{{profile.name}}</a>
+<div class="like-action"><a href="#"><i class="fa fa-reply"></i></a> &nbsp;
+                        		<a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
+                        		</div>
+                        		<p>
+                        		{{livestamp timepost}}
+                        		</p>
+                        	</div>                      
+                        </div>
+                 
                     </div>
                 </div>
-            </div>
+<p class="content-item">{{titleText}}</p>
 
-            {{#if isImage url}}
-                <img src="{{url}}" alt="{{url}}">
+                {{#if isImage url}}
+                <a href="{{pathFor 'postDetail'}}"><img class="image-item"  src="{{url}}" alt="{{url}}"></a>
             {{else}}
                 {{#if isVideo url}}
                     <div class="embed-responsive-item">
@@ -29,13 +46,9 @@
                 {{/if}}
             {{/if}}
 
-            <div class="row">
-                <div class="col-md-12 text-right" style="margin:10px 0; right: 15px">
-                    <a href="#"><i class="fa fa-reply"></i></a> &nbsp;
-                    <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
-                    <a href="#">1h</a>
-                </div>
             </div>
-        </div>
-    </div>
+							</li>  
+   
+        
+       
 </template>

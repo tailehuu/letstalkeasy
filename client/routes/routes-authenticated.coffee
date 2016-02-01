@@ -1,6 +1,6 @@
 Router.route('posts',
   waitOn: ->
-    [Meteor.subscribe('posts'), Meteor.subscribe('userData'), Meteor.subscribe('notifications')]
+    [Meteor.subscribe('otherposts'), Meteor.subscribe('userData'), Meteor.subscribe('notifications'), Meteor.subscribe('friends')]
   onBeforeAction: ->
     @next()
 )
@@ -18,7 +18,7 @@ Router.route('videos'
 Router.route('posts/:_id'
   name: 'postDetail'
   waitOn: ->
-    [Meteor.subscribe('posts'), Meteor.subscribe('comments'), Meteor.subscribe('userData')]
+    [Meteor.subscribe('otherposts'), Meteor.subscribe('comments'), Meteor.subscribe('userData')]
   data: ->
     Posts.findOne({_id: this.params._id})
 )
@@ -35,7 +35,7 @@ Router.route('followers',
 
 Router.route('following',
   waitOn: ->
-    [Meteor.subscribe('userData'), Meteor.subscribe('friends')]
+    [Meteor.subscribe('userData'), Meteor.subscribe('friends'), Meteor.subscribe('otherposts')]
 )
 
 Router.route('settings',

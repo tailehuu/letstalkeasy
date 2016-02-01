@@ -14,8 +14,15 @@ Template.post.helpers({
       return this.title.substring(0, number) + ' ...';
     }
   },
-  idUser: function() {
-	  return this.userId;
+  profile: function() {
+	  var user = Meteor.users.findOne({_id: this.userId});
+      return user.profile;
+  },
+  timepost: function() {
+	  return moment(this.added);
+  },
+  rank: function(){
+	  return this.rank;
   }
 });
 
