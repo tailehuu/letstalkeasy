@@ -14,6 +14,12 @@ Template.followersItem.helpers({
     },
     follower_count: function(){
     	return Posts.find({ "userId": this._id }).count();
+    },
+    follower: function(){
+    	return Friends.find({"following_id": this._id}).count();
+    },
+    following: function(){
+    	return Friends.find({"follower_id": this._id}).count();
     }
     
 });

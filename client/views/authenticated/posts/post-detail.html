@@ -1,66 +1,67 @@
 <template name="postDetail">
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog">
-	<div class="item">
-        <div class="thumbnail post-detail">
-            
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="item">
+			<div class="thumbnail post-detail">
 
-            {{#if isImage url}}
-                <img width="100%" src="{{url}}" alt="{{url}}">
-            {{else}}
-                {{#if isVideo url}}
-                    <div class="embed-responsive-item">
-                        <video width="100%" controls>
-                            <source src="{{url}}" type="video/mp4">
-                            <source src="{{url}}" type="video/ogg">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                {{/if}}
-            {{/if}}
-            <div class="caption">
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="{{pathFor 'postDetail'}}">
-                            {{#if currentUser.profile.avatar}}
-                    <img class="media-object" src="{{currentUser.profile.avatar}}"  alt="...">
-                                 
-                                {{else}}
-                                <img class="media-object" src="/images/no-image.png" alt="...">
-                         
-                                {{/if}}
-                               
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">
-                            	<a>{{userPost.profile.name}}</a>
-<div class="like-action"><a href="#"><i class="fa fa-reply"></i></a> &nbsp;
-                        		<a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> &nbsp;
-                        		</div>
-                        		<p>
-                        		{{livestamp timepost}}
-                        		</p>
-                        	</div>
-                            
-							
-                           
-                        </div>
-                    </div>
-                </div>
-            
-            <p class="caption">{{titleText}}</p>      
-            
-            <div class="caption">
-            <ul class="comments media-list">{{#each comments}} {{>
-					commentItem}} {{/each}}
-				</ul>
-            </div>
-			{{> commentPost}}	
+
+				{{#if isImage url}} <img width="100%" class="image-post" src="{{url}}" alt="{{url}}">
+				{{else}} {{#if isVideo url}}
+				<div class="embed-responsive-item">
+					<video width="100%" controls>
+						<source src="{{url}}" type="video/mp4">
+						<source src="{{url}}" type="video/ogg">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				{{/if}} {{/if}}
+				<div class="caption comment-bg">
+					<div class="media">
+						<div class="media-left">
+							<a href="{{pathFor 'postDetail'}}"> {{#if
+								currentUser.profile.avatar}} <img class="media-object"
+								src="{{currentUser.profile.avatar}}" alt="..."> {{else}} <img
+								class="media-object" src="/images/no-image.png" alt="...">
+
+								{{/if}}
+
+							</a>
+						</div>
+						<div class="media-body">
+							<div class="media-heading">
+								<a>{{userPost.profile.name}}</a>
+								<div class="like-action" style="display: none;">
+									<a href="#"><i class="fa fa-reply"></i></a> &nbsp; <a href="#"><span
+										class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+									&nbsp;
+								</div>
+								<p>{{titleText}}</p>
+							</div>
+
+
+
+						</div>
+						<div class="media-right timepost">
+						<p>{{livestamp timepost}}</p>
+						</div>
+					</div>
+				</div>
+
+				
+
+				<div class="caption comment-bg">
+					<ul class="comments media-list">
+					{{#each comments}} 
+					{{>	commentItem}} 
+					{{/each}}
+					</ul>
+				</div>
+				{{> commentPost}}
 			</div>
-    </div>
+		</div>
 
-</div>
+	</div>
 </div>
 
 

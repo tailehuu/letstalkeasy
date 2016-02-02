@@ -45,7 +45,12 @@ Template.postDetail.events({
 		    if(!element.hasClass('in')){
 		    	e.preventDefault();	  
 			    $('#myModal').modal('hide');			    
-		    	Router.go(Session.get( "currentURL"));
-		    }	    
+		    	
+		    	if(Session.get( "currentURL")){
+		    		Router.go(Session.get( "currentURL"));
+		    	}else{
+		    		Router.go('posts');
+		    	}
+		    }
 		}	 
 });
