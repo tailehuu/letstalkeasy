@@ -7,7 +7,7 @@ Router.route('posts',
 
 Router.route('photos'
   waitOn: ->
-    Meteor.subscribe 'posts'
+    Meteor.subscribe 'otherposts'
 )
 
 Router.route('videos'

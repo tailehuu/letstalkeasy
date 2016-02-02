@@ -1,5 +1,4 @@
 Template.commentPost.rendered = function() {
-	$('#body').autogrow()
     
 }
 Template.commentPost.events({

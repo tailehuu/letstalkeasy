@@ -64,6 +64,12 @@ Meteor.publish 'otherposts', ->
   if data
     return data
   @ready()
+# chatrooms
+Meteor.publish 'chatrooms', ->
+  data = ChatRooms.find()
+  if data
+    return data
+  @ready()
 # comments
 Meteor.publish 'comments', ->
   data = Comments.find()
