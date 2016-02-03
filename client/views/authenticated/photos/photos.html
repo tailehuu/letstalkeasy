@@ -1,12 +1,10 @@
 <template name="photos">
-  
 {{#if getPublishedCount 'numberOfPhotos'}}
-  <ul data-plugin-masonry="" class="products product-thumb-info-list row">
-	{{#each posts}}
+<div class="grid-content row">
+{{#each posts}}
 		{{> post}}
 	{{/each}}
-
-</ul>
+</div>
 {{else}}
 <p class="alert alert-warning">No photos uploaded yet!</p>
 {{/if}}

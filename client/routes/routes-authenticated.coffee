@@ -12,7 +12,7 @@ Router.route('photos'
 
 Router.route('videos'
   waitOn: ->
-    Meteor.subscribe 'posts'
+    Meteor.subscribe 'otherposts'
 )
 
 Router.route('posts/:_id'

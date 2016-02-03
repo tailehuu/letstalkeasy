@@ -1,0 +1,39 @@
+<template name="messageItem">
+{{#if typeChat}} 
+<div class="row msg_container base_receive">
+          <div class="col-md-2 col-xs-2 avatar">
+               {{#if userChat.profile.avatar}}
+             <img src="{{userChat.profile.avatar}}" class=" img-responsive ">
+             {{else}}
+             <img src="/images/no-image.png" class=" img-responsive ">
+             {{/if}}
+                </div>
+          <div class="col-md-10 col-xs-10">
+              <div class="messages msg_receive">
+                  <p>{{txtChat}}22</p>
+                
+                  <time>{{livestamp timeChat}}</time>
+              </div>
+          </div>
+      </div>
+	
+{{else}}
+      <div class="row msg_container base_sent">
+
+         <div class="col-md-10 col-xs-10">
+             <div class="messages msg_sent">
+                 <p>{{txtChat}}</p>
+               
+                 <time>{{livestamp timeChat}}11</time>
+             </div>
+         </div>
+         <div class="col-md-2 col-xs-2 avatar">
+         {{#if userChat.profile.avatar}}
+             <img src="{{userChat.profile.avatar}}" class=" img-responsive ">
+             {{else}}
+             <img src="/images/no-image.png" class=" img-responsive ">
+             {{/if}}
+         </div>
+     </div>
+{{/if}}
+</template>

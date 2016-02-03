@@ -1,9 +1,11 @@
 <template name="videos">
-    <div class="{{#if getPublishedCount 'numberOfVideos'}}grid-content{{/if}} row">
-        {{#each posts}}
-            {{> post}}
-        {{else}}
-            <p class="alert alert-warning">No videos uploaded yet!</p>
-        {{/each}}
-    </div>
+{{#if getPublishedCount 'numbersOfVideos'}}
+<div class="grid-content row">
+{{#each posts}}
+		{{> post}}
+	{{/each}}
+</div>
+{{else}}
+<p class="alert alert-warning">No videos uploaded yet!</p>
+{{/if}}
 </template>

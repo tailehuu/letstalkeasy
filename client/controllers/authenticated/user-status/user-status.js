@@ -3,7 +3,7 @@ Deps.autorun(function(){
 });
 Template.userStatus.helpers({
   users: function() {
-    return Meteor.users.find();
+    return Meteor.users.find({_id: {$ne: Meteor.userId()}});
   },
   userClass: function() {
     var ref, ref1;
@@ -21,11 +21,8 @@ Template.userStatus.helpers({
 Template.userStatus.events({
     'click .userchat':function(event){
     	event.preventDefault();
-    	var size = $( ".chat-window:last-child" ).css("margin-left");
-	     size_total = parseInt(size) + 400;
-	    alert(size_total);
-	    var clone = $( "#chat_window_1" ).clone().appendTo( ".container" );
-	    clone.css("margin-left", size_total);    	
+    	$('#room-chat').removeClass("messages-chat");
+    	
         Session.set('currentId',this._id);
         var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
         if(res)
