@@ -37,11 +37,11 @@
             {{else}}
                 {{#if isVideo url}}
                     <div class="embed-responsive-item">
-                        <video width="100%" controls>
+                        <a href="{{pathFor 'postDetail'}}"><video width="100%" controls>
                             <source src="{{url}}" type="video/mp4">
                             <source src="{{url}}" type="video/ogg">
                             Your browser does not support the video tag.
-                        </video>
+                        </video></a>
                     </div>
                 {{/if}}
             {{/if}}

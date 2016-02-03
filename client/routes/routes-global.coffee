@@ -6,3 +6,5 @@ Router.configure
     header: to: 'header'
     jumbotron: to: 'jumbotron'
     footer: to: 'footer'
+  waitOn: ->
+    [Meteor.subscribe('posts'), Meteor.subscribe('notifications')]
