@@ -1,11 +1,13 @@
 <template name="feed">
     {{> contentFor region="jumbotron" template="jumbotronProfile"}}
-   
-
+		
+{{#if getPublishedCount 'numberOfPosts'}}
 <div class="grid-content row">
-	{{#each posts}}
+{{#each posts}}
 		{{> post}}
 	{{/each}}
 </div>
-						
+{{else}}
+<p class="alert alert-warning">No posts uploaded yet!</p>
+{{/if}}				
 </template>
