@@ -1,3 +1,6 @@
+Template.messages.onRendered( function() {
+	$(".msg_container_base").scrollTop($('.msg_container_base').height())
+});
 Template.messages.helpers({
     'msgs':function(){
     	if(Session.get('roomid')){
@@ -8,12 +11,17 @@ Template.messages.helpers({
     userChat: function(){
     	if(Session.get('roomid')){
     		var result = ChatRooms.findOne({_id:Session.get('roomid')});
-    		var user = Meteor.users.findOne({_id: result.chatIds[0]});		
+    		if(result.chatIds[0] == Meteor.userId()){
+    			var user = Meteor.users.findOne({_id: result.chatIds[1]});
+    		}
+    		else{
+    			var user = Meteor.users.findOne({_id: result.chatIds[0]});
+    		}
             return user;
     	}
     	
     }
-});		  
+});
 Template.messages.events({
     'click .icon_close': function (event) {
     	event.preventDefault();
@@ -42,7 +50,7 @@ Template.messages.events({
 		    
 		              if (message.value !== '') {
 		                var de=ChatRooms.update({"_id":Session.get("roomid")},{$push:{messages:{
-		                 name: name,
+		                 userId: Meteor.userId(),
 		                 text: message.value,
 		                 createdAt: Date.now()
 		                }}});

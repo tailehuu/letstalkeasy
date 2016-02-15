@@ -1,8 +1,4 @@
 Template.messageItem.helpers({
-    'msgs':function(){
-        var result = ChatRooms.findOne({_id:Session.get('roomid')});
-        return result.messages;
-    },
     txtChat: function(){
     	return this.text;    	
     },
