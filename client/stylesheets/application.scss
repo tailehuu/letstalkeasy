@@ -232,6 +232,7 @@ img {
 		}
 		
 	}
+	
     .media-left .media-object {
       max-width: 64px;
     }
@@ -249,7 +250,11 @@ img {
 	    margin-left: 40px;
     }
   }
-
+  .avatar-status{
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+  }
   .online-status {
     color: #7EBA00;
   }

@@ -6,15 +6,16 @@
                     <a href="#">
                     
                      {{#if profile.avatar}}
-                         <img class="media-object" src="{{profile.avatar}}" width="30px"/>
+                         <img class="avatar-status" src="{{profile.avatar}}"/>
                      {{else}}
-                         <img class="media-object" src="/images/no-image.png" width="30px"/>
+                         <img class="avatar-status" src="/images/no-image.png"/>
                      {{/if}}
                       
                     </a>
                 </div>
                 <div class="media-body media-middle">
-                    <h6 class="media-heading userchat">{{profile.name}}</h6>
+                    <h6 class="media-heading">{{profile.name}}</h6>
+                    <h6 class="media-heading"><a class="userchat">Chat</a>{{#if userCall}} |  <a class="usercall">Call</a>{{/if}}</h6>
                 </div>
                 <div class="media-right media-middle">
                     <i class="fa fa-circle {{userClass}}-status"></i>

@@ -1,7 +1,12 @@
 <template name="notificationItem">
     <li>
+    {{#if notiType}}
         <a href="{{notificationPostPath}}" class="view-notification">
             <strong>{{commenterName}}</strong> commented on your post
         </a>
+        {{else}}
+        <a href="{{pathFor 'webrtc' roomName=idCallroom}}" class="view-notification">Someone call you</a>
+       
+        {{/if}}
     </li>
 </template>

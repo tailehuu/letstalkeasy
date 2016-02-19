@@ -67,6 +67,12 @@ Meteor.publish 'chatrooms', ->
   if data
     return data
   @ready()
+Meteor.publish 'videos', ->
+  data = undefined
+  data = Videos.find()
+  if data
+    return data
+  @ready()
 Meteor.publish 'comments', ->
   data = undefined
   data = Comments.find()

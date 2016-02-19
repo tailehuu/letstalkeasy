@@ -1,5 +1,6 @@
 Template.messages.onRendered( function() {
-	$(".msg_container_base").scrollTop($('.msg_container_base').height())
+	//$(".msg_container_base").prop("scrollHeight")
+	$(".msg_container_base").scrollTop($('.msg_container_base').height());
 });
 Template.messages.helpers({
     'msgs':function(){

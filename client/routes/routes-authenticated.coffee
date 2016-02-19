@@ -54,5 +54,8 @@ Router.route 'demo'
 Router.route('webrtc/:roomName'
   name: 'webrtc'
 )
+Router.route('callVideo/:roomName'
+  name: 'callVideo'
+)
 
 
