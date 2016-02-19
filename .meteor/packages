@@ -61,3 +61,4 @@ fds:webrtc
 fds:streams
 random
 copleykj:livestamp
+force-ssl
